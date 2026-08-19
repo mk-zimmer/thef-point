@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내 멤버십 조회 - 회원 정보 | IN THE F</title>
+  <link rel="icon" href="assets/images/favicon.ico" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body id="top">
+  <header class="site-header">
+    <div class="page-container">
+      <a href="membership-search.html" class="logo">
+        <img src="assets/images/logo.svg" alt="IN THE F" />
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-container result-layout">
+      <aside class="grade-panel">
+        <div class="grade-card">
+          <p class="grade-card__label">고객등급</p>
+          <p class="grade-card__name">BASIC</p>
+          <div class="grade-card__period">
+            <span>등급 유지 기간</span>
+            <span class="value">2026.01.01 ~ 2026.12.31</span>
+          </div>
+          <img class="grade-card__logo" src="assets/images/logo.png" alt="" />
+        </div>
+        <button type="button" class="btn btn-tertiary grade-panel__benefit">
+          <img src="assets/images/new-releases.svg" alt="" />
+          등급별 혜택 보기
+        </button>
+      </aside>
+
+      <div class="result-content">
+        <section class="member-greeting">
+          <div class="member-greeting__intro">
+            <p class="member-greeting__hello">안녕하세요</p>
+            <h1 class="member-greeting__title">홍길동 고객님</h1>
+          </div>
+
+          <dl class="member-meta">
+            <div class="member-meta__item">
+              <dt>회원번호</dt>
+              <dd class="brand">I0301668</dd>
+            </div>
+            <div class="member-meta__item">
+              <dt>가입일</dt>
+              <dd>2025.06.22</dd>
+            </div>
+          </dl>
+        </section>
+
+        <section class="next-grade card-box">
+          <div class="next-grade__headline">
+            <div class="next-grade__info">
+              <h2 class="next-grade__eyebrow">다음 등급 까지</h2>
+              <p class="next-grade__amount">128,000원 남았어요!</p>
+            </div>
+            <div class="grade-badge">
+              <img src="assets/images/ico-silver.png" alt="" />
+              <span>SILVER</span>
+            </div>
+          </div>
+
+          <div class="next-grade__progress-info">
+            <p class="current">
+              현재 구매금액 <span class="value">372,000원</span>
+              <small>2026년 구매금액 기준 (2026.01.01 - 2026.12.31)</small>
+            </p>
+            <p class="target">SILVER 기준 1,000,000원</p>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-label="다음 등급까지 진행률" aria-valuenow="74" aria-valuemin="0"
+            aria-valuemax="100">
+            <div class="progress-bar__fill" style="width: 74%"></div>
+            <span class="progress-bar__label">74%</span>
+          </div>
+          <p class="next-grade__footnote">
+            <span>산정기간 : 2026.01.01 - 2026.12.31</span>
+            <span>등급 산정 및 반영 : 매년 1월</span>
+          </p>
+        </section>
+
+        <div class="stat-grid">
+          <section class="stat-card">
+            <div class="stat-card__header">
+              <h2>보유 마일리지</h2>
+              <span class="pill">기준일 : 2026.08.31</span>
+            </div>
+            <p class="stat-card__value">12,500 <span class="unit-icon">M</span></p>
+          </section>
+          <section class="stat-card stat-card--muted">
+            <div class="stat-card__header">
+              <h2>소멸예정 마일리지</h2>
+              <span class="pill">소멸예정일 : 2026.08.31</span>
+            </div>
+            <p class="stat-card__value">3,200 <span class="unit-icon">M</span></p>
+          </section>
+        </div>
+
+        <section class="store-section">
+          <h2 class="section-title">등록 매장</h2>
+
+          <div class="store-card">
+            <span class="store-card__icon">
+              <img src="assets/images/store-03.svg" alt="" />
+            </span>
+
+            <div class="store-card__info">
+              <p class="store-card__name">강남본점</p>
+              <p class="store-card__note">등록 매장은 실제 가입 매장과 다를 수 있습니다.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="marketing-section">
+          <h2 class="section-title">마케팅 정보 수신동의</h2>
+          <dl class="info-grid">
+            <div class="info-box">
+              <dt>수신동의 상태</dt>
+              <dd><span class="pill pill-active">동의</span></dd>
+            </div>
+            <div class="info-box">
+              <dt>수신동의일</dt>
+              <dd>2025.06.22</dd>
+            </div>
+          </dl>
+        </section>
+
+        <div class="result-actions">
+          <a href="membership-account.html" class="btn btn-outline">
+            <img src="assets/images/user-switch.svg" alt="" />
+            다른 계정 선택
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="page-container footer-inner">
+      <div class="footer-info">
+        <a href="membership-search.html" class="logo">
+          <img src="assets/images/logo.svg" alt="IN THE F" />
+        </a>
+        <address class="footer-address">
+          <p>주소 : 06174 서울특별시 강남구 테헤란로 104길 21(대치동) 세아인스</p>
+          <p>대표이사 : 김한수</p>
+          <p>사업자등록번호 : 120-81-17274</p>
+        </address>
+        <p class="footer-copyright">COPYRIGHT © 2022 IN THE F. ALL RIGHTS RESERVED.</p>
+      </div>
+
+      <div class="footer-contact">
+        <h2>A/S 문의</h2>
+        <p class="phone">080-022-1281</p>
+        <p class="phone-note">(JOINUS, COMPAGNA, TRUGEN, BIND, MOSVANI)</p>
+        <p class="phone">080-850-0885</p>
+        <p class="phone-note">(ahwe)</p>
+        <p class="footer-hours">
+          <img src="assets/images/clock.svg" alt="" />
+          상담시간 : 월~금 09:00 ~ 18:00 (주말,공휴일 휴무)
+        </p>
+      </div>
+    </div>
+
+    <a href="#top" class="btn-top">TOP</a>
+  </footer>
+</body>
+
+</html>
