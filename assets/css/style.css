@@ -70,6 +70,7 @@
   --bp-mobile: 768px;
 
   --shadow-card: 0 2px 12px rgba(17, 17, 17, 0.06);
+  --grade-panel-width: 260px;
 }
 
 @font-face {
@@ -170,6 +171,27 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg-page);
   -webkit-font-smoothing: antialiased;
+}
+
+body:has(.result-layout){
+  position: relative;
+}
+
+body:has(.result-layout):before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+   width: calc(
+    (100% - min(1260px, 100%)) / 2
+    + var(--grade-panel-width)
+    + 60px
+  );
+  height: 100%;
+  background: var(--color-bg-section);
+  z-index: -1;
 }
 
 h1,
@@ -657,23 +679,11 @@ main:has(.page-hero) + .site-footer {
 /* --- result page --- */
 .result-layout {
   position: relative;
-  z-index: 0;
+  z-index: 1;
   display: flex;
   align-items: flex-start;
-  gap: var(--space-10);
-  padding-top: var(--space-10);
-  --grade-panel-width: 260px;
-}
-
-.result-layout::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: var(--space-10);
-  left: var(--space-8);
-  bottom: 0;
-  width: var(--grade-panel-width);
-  background-color: var(--color-bg-section);
+  gap: var(--space-12);
+  padding-top: var(--space-10);  
 }
 
 .grade-panel {
@@ -1104,6 +1114,8 @@ main:has(.page-hero) + .site-footer {
     flex-direction: column;
   }
 
+  body:has(.result-layout):before,
+  body:has(.result-layout) main::before,
   .result-layout::before {
     display: none;
   }
