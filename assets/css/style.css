@@ -1109,84 +1109,23 @@ main:has(.page-hero)+.site-footer {
 /* ==========================================================================
    6. Responsive Styles
    ========================================================================== */
-@media (max-width: 1024px) {
-  .result-layout {
-    flex-direction: column;
-  }
-
+/*
+ * Mobile layout is driven by orientation, not viewport width:
+ * portrait  -> mobile layout, regardless of width (iPhone, iPad, iPad Pro
+ *              portrait all follow the same mobile order below)
+ * landscape -> PC layout always (iPad Pro landscape included), since no
+ *              overrides exist outside this query
+ * Previously this was split across max-width:1024px / max-width:768px,
+ * which left a gap for portrait viewports wider than 768px (e.g. iPad Pro
+ * portrait, 1024px) where the mobile result order never applied.
+ */
+@media (orientation: portrait) {
   body:has(.result-layout):before,
   body:has(.result-layout) main::before,
   .result-layout::before {
     display: none;
   }
 
-  .grade-panel {
-    flex: none;
-    width: 100%;
-    position: static;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-    /* order: -1; */
-    margin-bottom: var(--space-8);
-  }
-
-  .grade-card {
-    height: auto;
-    aspect-ratio: 335 / 160;
-    background-image: url("../images/card-bg-mo.png");
-  }
-
-  .grade-card__period {
-    display: flex;
-    align-items: baseline;
-    gap: var(--space-2);
-  }
-
-  .grade-card__logo {
-    position: absolute;
-    top: var(--space-4);
-    right: var(--space-4);
-    width: 80px;
-    margin-top: 0;
-  }
-
-  .member-greeting {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-inner {
-    display: block;
-  }
-
-  .footer-address p:first-child {
-    font-size: 0;
-    /* '주소 :' 숨김 */
-  }
-
-  .footer-address p:first-child::after {
-    content: '06174 서울특별시 강남구 테헤란로 104길 21(대치동) 세아인스';
-    font-size: var(--font-size-md);
-  }
-
-  .footer-contact {
-    margin-top: var(--space-6);
-    padding: var(--space-6) 0;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .footer-contact .phone-note {
-    margin-bottom: var(--space-4);
-  }
-
-  .footer-copyright {
-    margin-top: var(--space-6);
-  }
-}
-
-@media (max-width: 768px) { 
   .pc-view {
     display: none !important;
   }
@@ -1205,12 +1144,34 @@ main:has(.page-hero)+.site-footer {
   }
 
   .footer-inner {
-    flex-direction: column;
+    display: block;
     gap: var(--space-6);
+  }
+
+  .footer-address p:first-child {
+    font-size: 0;
+    /* '주소 :' 숨김 */
+  }
+
+  .footer-address p:first-child::after {
+    content: '06174 서울특별시 강남구 테헤란로 104길 21(대치동) 세아인스';
+    font-size: var(--font-size-md);
   }
 
   .footer-contact {
     text-align: left;
+    margin-top: var(--space-6);
+    padding: var(--space-6) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .footer-contact .phone-note {
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-copyright {
+    margin-top: var(--space-6);
   }
 
   .btn-top {
@@ -1247,8 +1208,12 @@ main:has(.page-hero)+.site-footer {
     gap: var(--space-2);
   }
 
+  /* --- result page: mobile order (member-greeting -> grade-card ->
+     next-grade -> grade-panel__benefit -> stat-grid -> store-section ->
+     marketing-section -> result-actions), via display:contents so both
+     .grade-panel and .result-content children become direct flex items
+     of .result-layout and can be reordered together --- */
   .result-layout {
-    display: flex;
     flex-direction: column;
     padding-top: var(--space-6);
     gap: 0;
@@ -1258,14 +1223,15 @@ main:has(.page-hero)+.site-footer {
     display: contents;
   }
 
-  .btn-tertiary.grade-panel__benefit {
-    width: 100%;
-    order: 4;
+  .grade-panel {
+    display: contents;
   }
 
   .member-greeting {
     order: 1;
     width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .member-greeting__hello {
@@ -1308,14 +1274,27 @@ main:has(.page-hero)+.site-footer {
     content: none;
   }
 
-  .grade-panel {
-    display: contents;
-  }
-
   .grade-card {
     order: 2;
     width: 100%;
     margin-bottom: var(--space-8);
+    height: auto;
+    aspect-ratio: 335 / 160;
+    background-image: url("../images/card-bg-mo.png");
+  }
+
+  .grade-card__period {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+  }
+
+  .grade-card__logo {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 80px;
+    margin-top: 0;
   }
 
   .next-grade {
@@ -1362,6 +1341,11 @@ main:has(.page-hero)+.site-footer {
     content: none;
   }
 
+  .btn-tertiary.grade-panel__benefit {
+    width: 100%;
+    order: 4;
+  }
+
   .stat-grid {
     order: 5;
 
@@ -1385,13 +1369,13 @@ main:has(.page-hero)+.site-footer {
     box-sizing: border-box;
   }
 
+  .stat-card__value {
+    font-size: var(--font-size-3xl);
+  }
+
   .info-grid {
     grid-template-columns: 1fr;
     margin: 0 auto;
-  }
-
-  .stat-card__value {
-    font-size: var(--font-size-3xl);
   }
 
   .store-card__icon {
