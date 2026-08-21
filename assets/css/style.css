@@ -24,10 +24,10 @@
   --color-icon-muted: #6e6e6e;
   --color-benefit-btn-bg: #56698f;
 
-  --font-family: "Pretendard", -apple-system, BlinkMacSystemFont,
+  --font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont,
     "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
 
-  /* Typography scale — every font-size currently used in this stylesheet */
+  /* Typography*/
   --font-size-xs: 12px;
   --font-size-sm: 13px;
   --font-size-md: 14px;
@@ -73,26 +73,7 @@
   --grade-panel-width: 260px;
 }
 
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Pretendard';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
 /* ==========================================================================
    2. Reset / Base
@@ -1109,16 +1090,7 @@ main:has(.page-hero)+.site-footer {
 /* ==========================================================================
    6. Responsive Styles
    ========================================================================== */
-/*
- * Mobile layout is driven by orientation, not viewport width:
- * portrait  -> mobile layout, regardless of width (iPhone, iPad, iPad Pro
- *              portrait all follow the same mobile order below)
- * landscape -> PC layout always (iPad Pro landscape included), since no
- *              overrides exist outside this query
- * Previously this was split across max-width:1024px / max-width:768px,
- * which left a gap for portrait viewports wider than 768px (e.g. iPad Pro
- * portrait, 1024px) where the mobile result order never applied.
- */
+
 @media (orientation: portrait) {
   body:has(.result-layout):before,
   body:has(.result-layout) main::before,
@@ -1208,11 +1180,6 @@ main:has(.page-hero)+.site-footer {
     gap: var(--space-2);
   }
 
-  /* --- result page: mobile order (member-greeting -> grade-card ->
-     next-grade -> grade-panel__benefit -> stat-grid -> store-section ->
-     marketing-section -> result-actions), via display:contents so both
-     .grade-panel and .result-content children become direct flex items
-     of .result-layout and can be reordered together --- */
   .result-layout {
     flex-direction: column;
     padding-top: var(--space-6);

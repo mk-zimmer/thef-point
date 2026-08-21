@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>내 멤버십 조회 | IN THE F</title>
-<link rel="icon" href="assets/images/favicon.ico" />
-<link rel="stylesheet" href="assets/css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내 멤버십 조회 | IN THE F</title>
+  <link rel="icon" href="assets/images/favicon.ico" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body id="top">
-<header class="site-header">
-  <div class="page-container">
-    <a href="membership-search.html" class="logo">
-      <img src="assets/images/logo.svg" alt="IN THE F" />
-    </a>
-  </div>
-</header>
+  <header class="site-header">
+    <div class="page-container">
+      <a href="membership-search.html" class="logo">
+        <img src="assets/images/logo.svg" alt="IN THE F" />
+      </a>
+    </div>
+  </header>
 
-<main>
-  <div class="page-container">
-    <section class="page-hero">
-      <h1>내 멤버십 조회</h1> 
-      <p>회원 정보를 입력하시면 멤버십 계정을 <br class="m-view" />조회할 수 있습니다.</p>
-      <div class="divider" aria-hidden="true"></div>
-    </section>
+  <main>
+    <div class="page-container">
+      <section class="page-hero">
+        <h1>내 멤버십 조회</h1>
+        <p>회원 정보를 입력하시면 멤버십 계정을 <br class="m-view" />조회할 수 있습니다.</p>
+        <div class="divider" aria-hidden="true"></div>
+      </section>
 
-    <form class="card-box form-section" action="membership-account.html" method="get">
-      <div class="form-field">
-        <label for="name">이름</label>
-        <input type="text" id="name" name="name" class="input" placeholder="이름을 입력해주세요" required />
-      </div>
+      <form class="card-box form-section" action="membership-account.html" method="get">
+        <div class="form-field">
+          <label for="name">이름</label>
+          <input type="text" id="name" name="name" class="input" placeholder="이름을 입력해주세요" required />
+        </div>
 
-      <div class="form-field">
-        <label for="phone">휴대폰번호</label>
-        <input type="tel" id="phone" name="phone" class="input" placeholder="'-' 없이 숫자만 입력해주세요" required />
-      </div>
+        <div class="form-field">
+          <label for="phone">휴대폰번호</label>
+          <input type="tel" id="phone" name="phone" class="input" placeholder="'-' 없이 숫자만 입력해주세요" required />
+        </div>
 
-      <div class="form-field">
-        <label for="birth">생년월일</label>
-        <input type="text" id="birth" name="birth" class="input" placeholder="예) 19900101 (8자리)" inputmode="numeric" maxlength="8" required />
-      </div>
+        <div class="form-field">
+          <label for="birth">생년월일</label>
+          <input type="text" id="birth" name="birth" class="input" placeholder="예) 19900101 (8자리)" inputmode="numeric"
+            maxlength="8" required />
+        </div>
 
-      <div class="form-actions">
-        <button type="submit" class="btn btn-primary">계정 조회하기</button>
-      </div>
-    </form>
-  </div>
-</main>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">계정 조회하기</button>
+        </div>
+      </form>
+    </div>
+  </main>
 
-<footer class="site-footer">
+  <footer class="site-footer">
     <div class="page-container footer-inner">
       <div class="footer-info">
         <a href="membership-search.html" class="logo">
@@ -81,4 +84,5 @@
     <a href="#top" class="btn-top">TOP</a>
   </footer>
 </body>
+
 </html>
